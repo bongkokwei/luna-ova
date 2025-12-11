@@ -1,49 +1,14 @@
 [build-system]
-requires = ["setuptools>=61.0", "wheel"]
+requires = ["setuptools>=61.0"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "luna-ova"
 version = "0.1.0"
-description = "Python interface for controlling Luna Optical Vector Analyzer (OVA) instruments via TCP/IP"
+description = "Python interface for controlling Luna OVA instruments via TCP/IP"
 readme = "README.md"
-authors = [
-    {name = "bongkokwei", email = "your.email@example.com"}
-]
-maintainers = [
-    {name = "bongkokwei", email = "your.email@example.com"}
-]
+authors = [{name = "bongkokwei", email = "your.email@example.com"}]
 license = {text = "MIT"}
-keywords = [
-    "luna",
-    "ova",
-    "optical",
-    "vector",
-    "analyzer",
-    "photonics",
-    "fibre-optics",
-    "scpi",
-    "tcp-ip",
-    "instrumentation"
-]
-classifiers = [
-    "Development Status :: 4 - Beta",
-    "Intended Audience :: Science/Research",
-    "Intended Audience :: Telecommunications Industry",
-    "License :: OSI Approved :: MIT License",
-    "Operating System :: OS Independent",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
-    "Programming Language :: Python :: 3.11",
-    "Programming Language :: Python :: 3.12",
-    "Topic :: Scientific/Engineering",
-    "Topic :: Scientific/Engineering :: Physics",
-    "Topic :: System :: Hardware :: Hardware Drivers",
-    "Typing :: Typed"
-]
 requires-python = ">=3.7"
 dependencies = [
     "numpy>=1.20.0"
@@ -52,80 +17,15 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0.0",
-    "pytest-cov>=3.0.0",
-    "black>=22.0.0",
-    "isort>=5.10.0",
-    "flake8>=4.0.0",
-    "mypy>=0.950"
+    "black>=22.0.0"
 ]
 plot = [
     "matplotlib>=3.3.0"
-]
-examples = [
-    "matplotlib>=3.3.0",
-    "scipy>=1.7.0"
 ]
 
 [project.urls]
 Homepage = "https://github.com/bongkokwei/luna-ova"
 Repository = "https://github.com/bongkokwei/luna-ova"
-Issues = "https://github.com/bongkokwei/luna-ova/issues"
-Documentation = "https://github.com/bongkokwei/luna-ova#readme"
 
 [tool.setuptools]
-package-dir = {"" = "src"}
-packages = ["luna_ova"]
-
-[tool.black]
-line-length = 100
-target-version = ["py37", "py38", "py39", "py310", "py311"]
-include = '\.pyi?$'
-
-[tool.isort]
-profile = "black"
-line_length = 100
-multi_line_output = 3
-include_trailing_comma = true
-force_grid_wrap = 0
-use_parentheses = true
-ensure_newline_before_comments = true
-
-[tool.mypy]
-python_version = "3.7"
-warn_return_any = true
-warn_unused_configs = true
-disallow_untyped_defs = false
-disallow_incomplete_defs = false
-check_untyped_defs = true
-no_implicit_optional = true
-warn_redundant_casts = true
-warn_unused_ignores = true
-warn_no_return = true
-strict_optional = true
-
-[tool.pytest.ini_options]
-testpaths = ["tests"]
-python_files = ["test_*.py"]
-python_classes = ["Test*"]
-python_functions = ["test_*"]
-addopts = [
-    "--verbose",
-    "--cov=luna-ova",
-    "--cov-report=term-missing",
-    "--cov-report=html"
-]
-
-[tool.coverage.run]
-source = ["src"]
-branch = true
-
-[tool.coverage.report]
-exclude_lines = [
-    "pragma: no cover",
-    "def __repr__",
-    "raise AssertionError",
-    "raise NotImplementedError",
-    "if __name__ == .__main__.:",
-    "if TYPE_CHECKING:",
-    "if typing.TYPE_CHECKING:"
-]
+py-modules = ["luna_ova"]
