@@ -27,5 +27,5 @@ plot = [
 Homepage = "https://github.com/bongkokwei/luna-ova"
 Repository = "https://github.com/bongkokwei/luna-ova"
 
-[tool.setuptools]
-py-modules = ["luna_ova"]
+[tool.setuptools.packages.find]
+where = ["src"]
