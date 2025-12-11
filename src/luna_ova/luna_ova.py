@@ -179,7 +179,7 @@ class LunaOVA:
         """
         self._flush_input()  # Clear buffer before query - critical!
         self._send(command)
-        time.sleep(0.05)  # Small delay to allow device processing
+        time.sleep(0.5)  # Small delay to allow device processing
         return self._receive()
 
     def get_dut_length(self) -> float:
